@@ -1,0 +1,9 @@
+# Node
+node_modules/
+dist/
+*.log
+*.env
+
+# Angular
+**/node_modules/
+**/dist/

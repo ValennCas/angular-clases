@@ -1,0 +1,68 @@
+<!-- Es mas vieja que reactive-form
+    Logica basada en componente .html (en reactive esta del lado del TS (validacion, toam de datos, desarrollo))
+    Logica cae en su mayoria en el html
+    Asincronicos
+    Utilizan FormsModule
+    -->
+
+<div class="container">
+    <div class="row">
+    <div class="col-6">
+        <form (ngSubmit)="onSubmit(mi_formulario)" #mi_formulario="ngForm" class="row g-3">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input 
+                #emailControl="ngModel"
+                [(ngModel)]="mi_formulario_model.email"
+                [class.is-valid]="emailControl.valid"
+                [class.is-invalid]="emailControl.touched && emailControl.invalid"
+                type="email" 
+                name="email"
+                class="form-control" 
+                id="inputEmail4"
+                required
+                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                <div *ngIf="emailControl.hasError('required')"class="invalid-feedback">Este campo es invalido</div>
+                <div *ngIf="emailControl.hasError('pattern')"class="invalid-feedback">No es un email valido</div>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input
+                [(ngModel)]="mi_formulario_model.password"
+                name="password"
+                type="password" 
+                class="form-control" 
+                id="inputPassword4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputName" class="form-label">Name</label>
+                <input
+                [(ngModel)]="mi_formulario_model.name"
+                name="name"
+                type="text"
+                class="form-control" 
+                id="inputName">
+            </div>
+            <div class="col-md-6">
+                <label for="latName" class="form-label">lastName</label>
+                <input 
+                [(ngModel)]="mi_formulario_model.lastName"
+                type="text" 
+                name="lastName" 
+                class="form-control" 
+                id="lastName">
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div> 
+        </form>
+    </div>
+    <div class="col-6">
+        <pre>{{mi_formulario.value | json}}</pre>
+        <pre>{{mi_formulario.status }}</pre>
+    </div>
+</div>
+</div>
+

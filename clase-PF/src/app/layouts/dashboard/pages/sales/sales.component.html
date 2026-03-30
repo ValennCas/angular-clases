@@ -1,0 +1,35 @@
+
+@if ( loadingSales$ | async){
+    <mat-spinner></mat-spinner>
+}
+@else{
+    @if(error$ | async ){
+        <p>Ocurrio un error</p>
+    }
+    @else{
+        <form [formGroup]="saleForm" action="">
+            <mat-form-field>
+                <mat-label>Producto</mat-label>
+                <mat-select formControlName="product">
+                    <mat-option [value]="product" *ngFor="let product of products">{{product.name}} - {{product.price | currency}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Cantidad</mat-label>
+                <input type="number" matInput formControlName = "quantity">
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Comprador</mat-label>
+                <mat-select formControlName="user">
+                    <mat-option [value]="user" *ngFor = "let user of users">{{user.firstName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button (click)="createSale()" mat-button>Crear</button>
+        </form>
+    }
+
+    <pre>{{saleForm.value | json}}</pre>
+    <pre>{{ sales$ | async | json }}</pre>
+}

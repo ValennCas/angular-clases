@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+    <div class="col-6">
+        <form [formGroup]="mi_formulario" (ngSubmit)="onSubmit()" class="row g-3">
+            <!-- <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input
+                formControlName="email" 
+                type="email" 
+                class="form-control" 
+                [ngClass]="emailControl?.valid ? 'is-valid': '' "
+                class.is-invalid]="emailControl?.touched && emailControl?.invalid"
+                id="inputEmail4">
+                <div *ngIf="emailControl?.hasError('required')"class="invalid-feedback">La contranseña es obligatoria</div>
+            </div> -->
+
+            <!-- <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input formControlName="password" 
+                type="password" 
+                class="form-control" 
+                [class.is-valid]="passwordControl?.valid"
+                [class.is-invalid]="passwordControl?.touched && passwordControl?.invalid"
+                id="inputPassword4">
+                <div *ngIf="passwordControl?.hasError('required')"class="invalid-feedback">La contranseña es obligatoria</div>
+            </div> -->
+            <div class="col-md-6">
+                <label for="inputName" class="form-label">Name</label>
+                <input formControlName="name" 
+                type="text" 
+                class="form-control" 
+                [class.is-valid]="nameControl?.valid"
+                [class.is-invalid]="nameControl?.touched && nameControl?.invalid"
+                id="inputName">
+                <div *ngIf="nameControl?.hasError('noHomero')" class="invalid-feedback">No se admiten homeros</div>
+            </div>
+            <div class="col-md-6">
+                <label for="latName" class="form-label">lastName</label>
+                <input formControlName="lastname" type="text" class="form-control" id="lastName">
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div> 
+        </form>
+    </div>
+    <div class="col-6">
+        <pre>{{mi_formulario.status}}</pre>
+        {{ mi_formulario.value | json }}
+    </div>
+</div>
+</div>

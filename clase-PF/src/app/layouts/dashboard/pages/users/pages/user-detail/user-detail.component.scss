@@ -1,0 +1,47 @@
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 40px;
+}
+
+.not-found-card {
+  width: 500px;          
+  max-width: 90%;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;      
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.not-found-card p {
+  font-size: 16px;
+  color: #666;
+}
+
+.mat-mdc-card-actions{
+    justify-content: center;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+.mt-3 {
+  margin-top: 20px;
+}
+
+.empty-text {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+}
+
+.espacio{
+    margin: 2rem 0 0 2rem;
+}

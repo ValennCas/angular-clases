@@ -1,0 +1,111 @@
+<!-- <p [ngClass]="hasError ? 'error' : 'success'"
+  [style.font-weight]="hasError ? 700 : 400"
+  [ngStyle]="{
+    'text-decoration': hasError ? 'underline' : 'unset'
+  }"> -->
+<p [ngClass]="{
+  'success': !hasError,
+  'error': hasError
+}"
+[ngStyle]="{
+    'text-decoration': hasError ? 'underline' : 'unset',
+    'font-weight': hasError ? 700 : 400
+  }">
+
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid quia illum eos enim reiciendis rerum dolore animi impedit in nihil molestias sed sint perspiciatis ipsum fugiat cumque hic, voluptatum vel.
+  Eaque odio reiciendis eveniet veritatis officiis quod in ab culpa deserunt incidunt laboriosam amet recusandae placeat qui, necessitatibus molestias quaerat, blanditiis consequuntur atque quis eum accusamus ea! Facilis, perspiciatis quae.</p>
+
+  <h2>Ciclos</h2>
+
+  
+<button [disabled]="isDisabled" (click)="alternar_error()">Click</button>
+
+<br>
+
+<h2>Condicionales</h2>
+
+<button (click)="mostrar_listado = !mostrar_listado">Ver listado</button>
+  <!-- Mostrar u ocultar un elemento HTML -->
+  <ul *ngIf="mostrar_listado">
+    <li *ngFor="let fruta of frutas; let i = index">{{i}} - {{fruta}}</li>
+  </ul>
+
+
+
+  <!-- Desde Angular 17 para adelante anda, 
+   cualquiera de las dos sintaxis esta bien -->
+    @if(mostrar_listado){
+    <ul *ngIf="mostrar_listado">
+      @for(fruta of frutas; track $index){
+        <li>
+          {{$index}} - {{fruta}}
+        </li>
+      }
+    </ul>
+   }
+
+   <hr>
+
+  <h2>Switch</h2>
+
+  <div [ngSwitch]="status">
+    <p *ngSwitchCase="'en-camino'">Su paquete esta en camino</p>
+    <p *ngSwitchCase="'entregado'">Su paquete fue entregado</p>
+    <p *ngSwitchCase="'en-preparacion'">Su paquete esta en preparacion</p>
+
+    <p *ngSwitchDefault>ERROR: el estado es desconocido</p>
+  </div>
+
+  <select (change)="select_change($event)">
+    <option value="en-camino">En camino</option>
+    <option value="entregado">Entregado</option>
+    <option value="en-preparacion">En preparacion</option>
+  </select>
+
+  <!-- Angular 17 -->
+  @switch(status){
+    @case('en-camino'){
+      <p>Su paquete esta en camino</p>
+    }
+    @case('entregado'){
+      <p>Su paquete fue entregado</p>
+    }
+    @case('en-preparacion'){
+      <p>Su paquete esta en preparacion</p>
+    }
+    @default{
+      <p>ERROR: el estado es desconocido</p>
+    }
+  }
+
+
+  <hr>
+
+  <h2>Tipos de lanzamiento (binding)</h2>
+
+  <p>Lanzamiento de entrada: [] -> enviando informacion del componente al elemento (de padre a hijo)</p>
+  <p>Lanzamiento de salida: () -> Se le comunica al app.component que algo paso</p>
+  <p>Lanzamiento en doble sentido: [()] </p>
+
+  <hr>
+
+  <h2>Pipes</h2>
+  <p>Pequeñas funciones separadas de un componente que permiten no repetir codigo (servirá en cualquier parte de la web)</p>
+
+  <h4>date</h4>
+  <p>{{mi_cumple | date:'fullDate' }}</p>
+
+  <h4>uppercase/lowercase</h4>
+  <p>{{'lofdsko dfsks ddsa awodlo ' | lowercase}}</p>
+  <p>{{'lofdsko dfsks ddsa awodlo ' | uppercase}}</p>
+
+  <p>{{43333 | currency}}</p>
+
+
+  <h4>Prueba</h4>
+
+  <p *ngFor="let estudiante of estudiantes_nuevos" [ngClass]="{
+  'success': estudiante.aprobado,
+  'error': !estudiante.aprobado
+}">{{estudiante.nombre}}</p>
+  

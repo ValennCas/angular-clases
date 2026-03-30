@@ -1,0 +1,22 @@
+<h2 mat-dialog-title class="dialog-title">Eliminar usuario</h2>
+
+<div mat-dialog-content class="dialog-content">
+  <div class="row">
+    <div class="col-12">
+      <p>
+        ¿Estás seguro que querés eliminar a 
+        <strong>{{ data?.firstName }} {{ data?.lastName }}</strong>?
+      </p>
+    </div>
+  </div>
+
+  <div class="dialog-actions" mat-dialog-actions>
+    <button mat-button mat-dialog-close class="btn-cancelar">
+      Cancelar
+    </button>
+
+    <button mat-raised-button color="warn" (click)="onDelete()" class="btn-guardar">
+      Eliminar
+    </button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div *ngIf="visible()" class="modal-backdrop">
+    <div class="d-flex justify-content-center align-items-center h-100 w-100">
+        <div class="card w-50">
+            <div class="card-body">
+                <div class="card-text">
+                    <!-- Se muestra lo que se envia adentro del componente en el padre -->
+                    <ng-content/>
+                </div>
+                <button (click)="visibleChange.emit(false)" class="btn btn-secondary">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

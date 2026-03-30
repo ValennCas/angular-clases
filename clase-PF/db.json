@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "firstName": "Juan",
+      "lastName": "Perez",
+      "email": "juan@gmail.com",
+      "role": "USER",
+      "createdAt": "2026-03-16"
+    }
+  ],
+  "products": [
+    {
+      "id": 2436,
+      "name": "Objeto 1774448725469",
+      "price": 1774448725469
+    }
+  ],
+  "sales": [
+    {
+      "id": 1234,
+      "productId": 2436,
+      "userId": 3
+    },
+    {
+      "id": 1235,
+      "productId": 2436,
+      "userId": 3
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+
+
+<p>{{nombre | myCustomTextTransform: "u" : "p" }}</p>
+
+@if(valido){
+    <p appResaltado [bgColor]="'red'">{{"Lorem das dsa des ffff" | myCustomTextTransform: "p" }}</p>
+
+}
+@else{
+    <p appResaltado [bgColor]="'green'">{{"Lorem das dsa des ffff" | myCustomTextTransform: "p" }}</p>
+}
+<p appResaltado >{{nombre | myCustomTextTransform}}</p>
+
+<p *appRepetir="let i; total: 10">{{hoy | date: "dd-MM-YYYY"}}</p>
+
+
+<!-- <p>{{[1,2,3] | myCustomTextTransform}}</p> tira error ya que se espera 
+ un string y no un arreglo de numeros -->

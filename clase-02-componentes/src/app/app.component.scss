@@ -1,0 +1,32 @@
+// h1{
+//     color: violet;
+// };
+
+// .estilo{
+//         display: flex;
+// }
+
+.sidenav-container{
+    height: 100vh;
+    background-color: blue;
+    width: 200px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+}
+
+
+.grid-wrapper{
+    height: 100vh;
+    background-color: grey;
+    position: relative;
+}
+
+.grid-wrapper{
+    padding-left: 200px;
+}
+
+.toolbar-container{
+    height: 60px;
+    background-color: aqua;
+}

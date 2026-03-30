@@ -1,0 +1,56 @@
+
+@if (isLoading$ | async){
+  <mat-spinner></mat-spinner>
+}
+@else{
+  @if(productsError$ | async; as error){
+    <h2>{{ error.message }}</h2>
+  }
+  @else{
+    <div class="d-flex justify-content-end mb-3">
+        <button mat-raised-button (click)="createProduct()">Crear usuario</button>
+    </div>
+    
+    <table mat-table [dataSource]="(products$ | async) || []" class="mat-elevation-z8">
+    <!-- dataSource: array con sus datos que se desean mostrar en el TS-->
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+       <!-- Angular Material ya se encarga de hacer el ngFor internamente para no tener que hacerlo nosotros -->
+       <!-- ng_container agrupan el th (encabezado) y un td (data) -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <!-- matCellDef: trae el element del array imprime la columna especificada (en este caso position) -->
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Precio </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="primary">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="deleteProductById(element.id)" mat-icon-button color="warn">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  }
+}

@@ -1,0 +1,39 @@
+.dialog-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 0;
+}
+
+.dialog-content {
+  padding-top: 16px !important;
+  min-width: 480px;
+
+  .row {
+    margin-bottom: 4px;
+  }
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px 0 0 0;
+  margin-top: 8px;
+  border-top: 1px solid #e0e0e0;
+
+  .btn-cancelar {
+    color: #888;
+
+    &:hover {
+      color: #333;
+    }
+  }
+
+  .btn-guardar {
+    border-radius: 8px;
+    padding: 0 20px;
+  }
+}
