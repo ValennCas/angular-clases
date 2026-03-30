@@ -59,29 +59,14 @@
                     }
                 </div> -->
                 <!-- angular 16 -->
-                <!-- <div *ngIf="authUser$ | async; let user">{{user?.firstName}}</div> -->
+                <!-- <div *ngIf="authUser$ | async; let user; else .....">{{user?.firstName}}</div> -->
             </div>
         </mat-toolbar>
         
         <main class="main-content">
             <!-- / dashboard -->
             <router-outlet></router-outlet>
-            <!-- <app-users></app-users> -->
-             <!-- <app-pipes-y-directivas></app-pipes-y-directivas> -->
-              <!-- <h2>Componente productos</h2>
-              <app-products></app-products>
-              <h2>Componente clase 09</h2>
-             <app-clase-09-rxjs></app-clase-09-rxjs> -->
-
-             <!-- <button (click)="mostrarComponente = !mostrarComponente">
-                alternar componente
-             </button>
-
-             <button (click)="login()" color="primary" mat-flat-button>Iniciar sesion</button>
-             <button (click)="logout()" color="primary" mat-flat-button>Cerrar sesion</button>
-
-              <h2>Componente clase 10</h2>
-             <app-clase-10-rxjs-2 *ngIf="mostrarComponente"></app-clase-10-rxjs-2> -->
+            
         </main>
         <!-- TOOLBAR SUPERIOR -->
 

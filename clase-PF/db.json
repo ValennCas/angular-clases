@@ -7,13 +7,49 @@
       "email": "juan@gmail.com",
       "role": "USER",
       "createdAt": "2026-03-16"
+    },
+    {
+      "id": 4,
+      "firstName": "Juana",
+      "lastName": "Perez",
+      "email": "juana@gmail.com",
+      "role": "USER",
+      "createdAt": "2026-03-16"
+    },
+    {
+      "id": 5,
+      "firstName": "Felipe",
+      "lastName": "Rodriguez",
+      "email": "feli222@gmail.com",
+      "role": "USER",
+      "createdAt": "2026-03-30"
     }
   ],
   "products": [
     {
       "id": 2436,
       "name": "Objeto 1774448725469",
-      "price": 1774448725469
+      "price": 15450
+    },
+    {
+      "id": 2437,
+      "name": "Objeto 1774448725467",
+      "price": 17000
+    },
+    {
+      "id": 2438,
+      "name": "Objeto 1774448725468",
+      "price": 21700
+    },
+    {
+      "id": 2439,
+      "name": "Objeto 1774448725468",
+      "price": 25500
+    },
+    {
+      "id": 2440,
+      "name": "Objeto 1774448725468",
+      "price": 14300
     }
   ],
   "sales": [
@@ -23,9 +59,24 @@
       "userId": 3
     },
     {
+      "id": 1236,
+      "productId": 2437,
+      "userId": 3
+    },
+    {
       "id": 1235,
       "productId": 2436,
       "userId": 3
+    },
+    {
+      "id": 1235,
+      "productId": 2436,
+      "userId": 4
+    },
+    {
+      "id": 1235,
+      "productId": 2438,
+      "userId": 4
     }
   ]
 }
